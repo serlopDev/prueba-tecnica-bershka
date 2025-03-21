@@ -4,11 +4,11 @@ Prueba técnica para Bershka implementando una función recursiva para crear un 
 
 ## Método de ejecución
 
-1. Para la prueba he decidido crear un archivo donde he almacenado las categorías puesto que son una constante inmutable que sólo se utiliza cómo referencia.
+1. Para la prueba, he decidido crear un archivo en el que he almacenado las categorías, puesto que son una constante inmutable utilizada únicamente como referencia.
 
-2. A la hora de realizar la función recursiva he decidido crear en un inicio un path con el separador ('/') para posteriormente ir añadiendo las nuevas categorías hasta que la categoría coincidiese con la categoría proveniente cómo parámetro en el método.
+2. A la hora de implementar la función recursiva, opté por crear inicialmente un path con el separador ('/'), para posteriormente añadir las nuevas categorías hasta que la categoría coincidiera con la proporcionada como parámetro en el método.
 
-3. Para estilizar un poco el resultado obtenido he decidido utilizar TailwindCSS por su versatilidad y rapidez a la hora de maquetar interfaces de usuario.
+3. Para estilizar el resultado obtenido, decidí utilizar TailwindCSS debido a su versatilidad y eficiencia en la maquetación de interfaces de usuario.
 
 ## ¡LISTO PARA EL DESAFÍO! 🚀
 
