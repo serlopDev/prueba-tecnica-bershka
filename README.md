@@ -1,14 +1,18 @@
 # prueba-tecnica-bershka
 
-This template should help get you started developing with Vue 3 in Vite.
+Prueba técnica para Bershka implementando una función recursiva para crear un path a través de las diferentes categorías anidadas.
 
-## Recommended IDE Setup
+## Método de ejecución
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. Para la prueba he decidido crear un archivo donde he almacenado las categorías puesto que son una constante inmutable que sólo se utiliza cómo referencia.
 
-## Customize configuration
+2. A la hora de realizar la función recursiva he decidido crear en un inicio un path con el separador ('/') para posteriormente ir añadiendo las nuevas categorías hasta que la categoría coincidiese con la categoría proveniente cómo parámetro en el método.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+3. Para estilizar un poco el resultado obtenido he decidido utilizar TailwindCSS por su versatilidad y rapidez a la hora de maquetar interfaces de usuario.
+
+## ¡LISTO PARA EL DESAFÍO! 🚀
+
+![GIF motivador](https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif)
 
 ## Project Setup
 
