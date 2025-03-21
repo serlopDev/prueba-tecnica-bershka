@@ -1,6 +1,13 @@
 <script lang="ts" setup>
 import { categories } from "@/constants/data";
 import { Category } from "@/models/models";
+import { ref } from "vue";
+
+/**
+ * Component State
+ */
+
+const selected = ref("category4");
 
 /**
  * Component Methods
@@ -56,7 +63,7 @@ const getCategoryPath = (categories: Array<Category>, categoryName: string) => {
           "
         ></div>
       </div>
-      <div class="mx-auto px-20 py-32 sm:py-48 lg:py-56">
+      <div class="mx-auto px-20 py-32">
         <div class="hidden sm:mb-8 sm:flex sm:justify-center">
           <div
             class="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
@@ -75,31 +82,48 @@ const getCategoryPath = (categories: Array<Category>, categoryName: string) => {
         </div>
         <div class="text-center">
           <h1
-            class="text-3xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl"
+            class="text-6xl font-semibold tracking-tight text-balance text-gray-900"
           >
             Prueba técnica proceso de selección Bershka
           </h1>
-
-          <div class="w-full mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8 mt-10">
-            <h2 class="text-2xl font-bold tracking-tight text-gray-900">
-              Categorías
-            </h2>
-
-            <div
-              class="w-full mt-6 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-            >
-              <div
-                v-for="(category, index) in outputs"
-                :key="index"
-                class="col-span-1"
-              >
-                <h1 class="mb-3">
-                  Si introduces la categoría: <strong>{{ category }}</strong>
-                </h1>
+          <div class="w-full mx-auto px-4">
+            <div class="w-full mt-10 grid grid-cols-1">
+              <div class="relative col-span-1 space-x-3">
                 <div
-                  class="bg-white mx-auto h-fit flex items-center justify-center shadow-lg border-2 border-slate-800 rounded-xl py-6 px-5 text-black font-semibold"
+                  class="absolute bottom-0 w-full h-px bg-gray-200"
+                  aria-hidden="true"
+                ></div>
+                <ul
+                  class="px-6 relative text-sm font-medium flex flex-nowrap -mx-4 sm:-mx-6 lg:-mx-8 overflow-x-scroll no-scrollbar"
                 >
-                  {{ getCategoryPath(categories, category) }}
+                  <li
+                    v-for="(category, index) in outputs"
+                    :key="index"
+                    class="mr-6 last:mr-0 first:pl-4 sm:first:pl-6 lg:first:pl-8 last:pr-4 sm:last:pr-6 lg:last:pr-8"
+                  >
+                    <button
+                      @click="selected = category"
+                      class="block capitalize cursor-pointer pb-3 hover:text-blue-600 whitespace-nowrap"
+                      :class="{
+                        'text-blue-500 border-b-2 border-blue-500':
+                          selected === category,
+                      }"
+                    >
+                      categoría: {{ category }}
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-span-1 mx-auto mt-10">
+                <div class="bg-white shadow-lg rounded-xl">
+                  <div
+                    class="w-full border-b border-slate-400 py-4 px-6 text-left text-black"
+                  >
+                    <strong>OUTPUT PATH</strong>
+                  </div>
+                  <div class="text-center px-20 py-10 text-xl">
+                    {{ getCategoryPath(categories, selected) }}
+                  </div>
                 </div>
               </div>
             </div>
